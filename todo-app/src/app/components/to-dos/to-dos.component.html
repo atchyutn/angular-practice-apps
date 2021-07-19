@@ -1,1 +1,14 @@
-<p>to-dos works!</p>
+<div class="container">
+  <ul class="list-group w-100" *ngFor="let todo of todos">
+    <li class="list-group-item d-flex justify-content-between w-100">
+      <span>
+        <input type="checkbox" (change)='changeTodoStatus(todo)' [checked]="todo.isDone">
+      </span>
+      <span [ngClass]="{completedTodo: todo.isDone}">
+        {{todo.title | titlecase}}
+      </span>
+      <span>{{todo.dueDate | date}}</span>
+      <span (click)='deleteTodo(todo)'>trash</span>
+    </li>
+  </ul>
+</div>

@@ -21,11 +21,15 @@ export class ToDosComponent implements OnInit {
   }
 
   changeTodoStatus(todo: ToDo): void {
+    console.log(todo);
     this._todoService.updateTodo(todo);
   }
 
   deleteTodo(todo: ToDo): void {
     this._todoService.removeTodo(todo);
+    this._todoService.getTodos().subscribe(todos => {
+      this.todos = todos;
+    })
   }
 
 }

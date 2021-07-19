@@ -28,6 +28,6 @@ export class ToDOService {
   }
 
   updateTodo(todo: ToDo){
-    this.todos = this.todos.map(t => t.id === todo.id ? todo : t);
+    todo.isDone = !todo.isDone
   }
 }
