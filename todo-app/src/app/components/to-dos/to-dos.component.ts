@@ -1,5 +1,7 @@
+import { ToDo } from './../../models/ToDo';
+import { ToDOService } from './../../services/to-do.service';
 import { Component, OnInit } from '@angular/core';
-
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-to-dos',
   templateUrl: './to-dos.component.html',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToDosComponent implements OnInit {
 
-  constructor() { }
+  faTrash = faTrash;
+  todos:ToDo[] = [];
+
+  constructor(private _todoService: ToDOService) {}
 
   ngOnInit(): void {
+    this._todoService.getTodos().subscribe(todos => {
+      this.todos = todos;
+    })
+  }
+
+  changeTodoStatus(todo: ToDo): void {
+    this._todoService.updateTodo(todo);
+  }
+
+  deleteTodo(todo: ToDo): void {
+    this._todoService.removeTodo(todo);
   }
 
 }
