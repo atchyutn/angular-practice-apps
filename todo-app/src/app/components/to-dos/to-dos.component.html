@@ -8,7 +8,9 @@
         {{todo.title | titlecase}}
       </span>
       <span>{{todo.dueDate | date}}</span>
-      <span (click)='deleteTodo(todo)'>trash</span>
+      <span (click)='deleteTodo(todo)'>
+        <fa-icon [icon]='faTrash'>Trash</fa-icon>
+      </span>
     </li>
   </ul>
 </div>

@@ -25,6 +25,7 @@ export class TodoFormComponent implements OnInit {
       dueDate: new Date()
     };
     this._todoService.addTodo(newToDo);
+    this.todoTitle = '';
   }
 
   updateTodo(todo: ToDo): void {

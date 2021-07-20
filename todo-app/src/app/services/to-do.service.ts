@@ -8,9 +8,9 @@ export class ToDOService {
   todos: ToDo[];
   constructor() {
     this.todos = [
-      {id: 1, title: 'Buy milk', dueDate: new Date(), isDone: false},
-      {id: 2, title: 'Read a book', dueDate: new Date(), isDone: false},
-      {id: 3, title: 'Watch a movie', dueDate: new Date(), isDone: false}
+      {id: '1', title: 'Buy milk', dueDate: new Date(), isDone: false},
+      {id: '2', title: 'Read a book', dueDate: new Date(), isDone: false},
+      {id: '3', title: 'Watch a movie', dueDate: new Date(), isDone: false}
     ];
   }
 
